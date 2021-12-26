@@ -1,12 +1,11 @@
 <template>
   <div class="TypeScript">
-
+    主にデータ周り
   </div>
 </template>
 
 <script lang="ts">
-import { Vue } from "vue-class-component";
-import { Person } from "./ts/classSample"
+import { Vue } from "vue-class-component"
 
 type bread = {
   wheat: number
@@ -38,11 +37,6 @@ export default class TypeScript extends Vue {
     // 文字列リテラル
     this.stringLiteral('summer')
     // console.log(this.stringLiteral('aa')) // エラー
-
-    // クラス
-    const person = new Person('平賀', 28)
-    person.show()
-    // person.privateMethod() // エラーになる
   }
 
   /**
