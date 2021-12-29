@@ -1,0 +1,1 @@
+export { ContentData } from "./content.d.ts"
