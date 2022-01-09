@@ -10,6 +10,7 @@
 </template>
 
 <script lang="ts">
+/* eslint-disable */
 import { defineComponent } from "vue";
 
 export default defineComponent({
@@ -21,5 +22,16 @@ export default defineComponent({
       object: {},
     }
   },
+  mounted() {
+    this.hoge(this.object)
+  },
+  errorCaptured(error) {
+    console.log("era-", error)
+  },
+  methods: {
+    hoge(value: any) {
+      return value.hoge.piyo
+    }
+  }
 });
 </script>
