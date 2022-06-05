@@ -44,7 +44,7 @@
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld3';
+import HelloWorld from './components/HelloWorld4';
 
 export default {
   name: 'App',
