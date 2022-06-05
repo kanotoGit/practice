@@ -228,6 +228,7 @@ export default {
       const clone = _.cloneDeep(this.items)
       const { parent, index } = this.getParentFromId(null, clone, rowData.id)
       const cloneEmptyItem = _.cloneDeep(emptyItem)
+      cloneEmptyItem.id = this.zeroPadding(idCounter++, 3)
 
       // 追加処理
       if (parent) {
@@ -246,7 +247,7 @@ export default {
       const clone = _.cloneDeep(this.items)
       const targetRowData = this.getRowDataFromId(clone, rowData.id)
       const cloneEmptyItem = _.cloneDeep(emptyItem)
-      cloneEmptyItem.id = `${idCounter++}`
+      cloneEmptyItem.id = this.zeroPadding(idCounter++, 3)
 
       // 追加処理
       if (targetRowData.children.length === 0) {
@@ -385,7 +386,7 @@ export default {
       this.items = clone
     },
 
-    /** TODO: 金額のセット */
+    /** 金額のセット */
     setPriceData() {
       const clone = _.cloneDeep(this.items)
 
