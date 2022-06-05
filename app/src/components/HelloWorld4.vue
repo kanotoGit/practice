@@ -313,43 +313,40 @@ export default {
       })
     },
 
-    /** TODO: 行移動(done) */
+    /** 行移動(done) */
     onClickUpDown(rowData, directive) {
-      // const clone = _.cloneDeep(this.items)
-      // const { parentData } = this.getParentFromIndexRoute(clone, rowData.indexRoute)
+      const clone = _.cloneDeep(this.items)
+      const { parent, index } = this.getParentFromId(null, clone, rowData.id)
 
-      // const targetIndex = rowData.indexRoute.at(-1)
-      // const targetRowData = parentData?.children ?? clone
+      const targetRowData = parent?.children ?? clone
+      if (directive === -1) {
+        // 上に移動する場合
+        if (index !== 0) {
+          targetRowData.splice(
+            index - 1,
+            2,
+            targetRowData[index],
+            targetRowData[index - 1],
+          )
+        } else {
+          // NOTE: 対象の行が最初のため処理しない
+        }
+      } else {
+        // 下に移動する場合
+        if (index !== targetRowData.length - 1) {
+          targetRowData.splice(
+            index,
+            2,
+            targetRowData[index + 1],
+            targetRowData[index],
+          )
+        } else {
+          // NOTE: 対象の行が最後のため処理しない
+        }
+      }
+      this.items = clone
 
-      // if (directive === -1) {
-      //   // 上に移動する場合
-      //   if (targetIndex !== 0) {
-      //     targetRowData.splice(
-      //       targetIndex - 1,
-      //       2,
-      //       targetRowData[targetIndex],
-      //       targetRowData[targetIndex - 1],
-      //     )
-      //   } else {
-      //     // NOTE: 対象の行が最初のため処理しない
-      //   }
-      // } else {
-      //   // 下に移動する場合
-      //   if (targetIndex !== targetRowData.length - 1) {
-      //     targetRowData.splice(
-      //       targetIndex,
-      //       2,
-      //       targetRowData[targetIndex + 1],
-      //       targetRowData[targetIndex],
-      //     )
-      //   } else {
-      //     // NOTE: 対象の行が最後のため処理しない
-      //   }
-      // }
-
-      // this.items = clone
-
-      // this.setTableData()
+      this.setTableData()
     },
 
     /** テーブルデータのセット */
