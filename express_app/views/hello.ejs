@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+  <%- include('head', title) %>
+  <body>
+    <h1><%= title %></h1>
+    <dl>
+      <% for(const item of db) { %>
+        <dt><%= item.id %>:</dt>
+        <dd><%= item.name %></dd>
+      <% } %>
+    </dl>
+  </body>
+</html>

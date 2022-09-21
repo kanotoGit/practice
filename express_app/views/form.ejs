@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+  <%- include('head', title) %>
+  <body>
+    <h1><%= title %></h1>
+
+    <p><%= message %> </p>
+
+    <form action="/form" method="POST">
+      <div>ID: <input type="text" name="uid" value="<%= uid %>"></div>
+      <div>password: <input type="text" name="password" value="<%= password %>"></div>
+
+      <hr>
+
+      <button>ログイン</button>
+    </form>
+  </body>
+</html>
