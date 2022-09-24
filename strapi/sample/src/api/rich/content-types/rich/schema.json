@@ -1,0 +1,18 @@
+{
+  "kind": "singleType",
+  "collectionName": "riches",
+  "info": {
+    "singularName": "rich",
+    "pluralName": "riches",
+    "displayName": "リッチテキスト"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Rtext": {
+      "type": "richtext"
+    }
+  }
+}

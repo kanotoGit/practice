@@ -1,0 +1,18 @@
+{
+  "kind": "collectionType",
+  "collectionName": "hoges",
+  "info": {
+    "singularName": "hoge",
+    "pluralName": "hoges",
+    "displayName": "hoge"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "hoge": {
+      "type": "richtext"
+    }
+  }
+}
